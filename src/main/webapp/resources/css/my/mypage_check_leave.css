@@ -1,0 +1,122 @@
+/* 전체 레이아웃 */
+.layout {
+  display: flex;
+  flex: 1;
+  width: 100%;
+  min-height: calc(100vh - 240px); /* 헤더(120px)+푸터(120px) 제외 */
+}
+
+/* 좌측 배너 */
+.left-banner {
+  width: 200px; /* 필요에 따라 조절 */
+  margin-left: 100px;
+  background-color: #666;
+  color: white;
+  display: flex;
+  flex-direction: column; /* 세로 방향으로 쌓기 */
+  align-items: flex-start; /* 왼쪽 정렬 */
+  padding: 20px;
+  font-weight: bold;
+  font-size: 16px;
+  margin-right: 50px;
+}
+
+.left-banner a {
+  color: white;
+  text-decoration: none;
+  margin: 5px 0; /* 위아래 간격 */
+  margin-top: 30px;
+}
+
+.left-banner hr {
+  width: 100%;
+  border: 0.5px solid #fff;
+  margin: 5px 0;
+}
+
+/* 본문 */
+.content {
+  flex: 1;
+  padding: 20px; /* 기존 padding-left 제거 */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* 전체 중앙 */
+}
+
+table {
+  border: 1px solid black;
+  border-collapse: collapse;
+  width: 60%;
+  border-right: none;
+  border-left: none;
+  font-size: 18px;
+}
+
+th,
+td {
+  border: 1px solid #999999;
+  text-align: left;
+  padding: 20px;
+}
+
+tr {
+  border-bottom: 1px solid black;
+}
+
+table tr:first-child td,
+table tr:first-child th {
+  border-top: 2px solid black; /* 첫 행만 굵게 검은색 */
+}
+
+table tr:last-child td,
+table tr:last-child th {
+  border-bottom: 2px solid black; /* 첫 행만 굵게 검은색 */
+}
+
+td:first-child,
+th:first-child {
+  border-left: none;
+}
+
+td:not(first-child),
+th:not(first-child) {
+  border-right: none;
+}
+
+th {
+  width: 25%;
+  background-color: rgb(255, 223, 255);
+  padding-left: 40px;
+}
+
+td {
+  padding-left: 40px;
+}
+
+.inputPw {
+  border: none;
+  background-color: #ccc;
+  padding: 5px;
+  width: 300px;
+  font-size: 18px;
+}
+
+#inputLeave {
+  margin: 30px;
+  display: block;
+  justify-content: flex-end;
+  margin-left: 600px;
+}
+
+.cancleLeaveBtn {
+  width: 100px;
+  height: 50px;
+  margin: 0;
+}
+.memberBtn {
+  display: flex;
+  justify-content: center;
+  gap: 20px; /* 버튼 사이 간격 */
+  margin-top: 20px;
+  width: 100%;
+}

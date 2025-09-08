@@ -1,0 +1,76 @@
+/* 전체 레이아웃 */
+.layout {
+  display: flex;
+  flex: 1;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* 화면 전체 높이 */
+  margin: 0;
+}
+
+/* 좌측 배너 */
+.left-banner {
+  width: 200px; /* 필요에 따라 조절 */
+  margin-left: 100px;
+  background-color: #666;
+  color: white;
+  display: flex;
+  flex-direction: column; /* 세로 방향으로 쌓기 */
+  align-items: flex-start; /* 왼쪽 정렬 */
+  padding: 20px;
+  font-weight: bold;
+  font-size: 16px;
+  margin-right: 50px;
+}
+
+h2 {
+  margin-top: -10px;
+}
+h3 {
+  margin-top: 50%;
+}
+.left-banner a {
+  color: white;
+  text-decoration: none;
+  margin: 5px 0; /* 위아래 간격 */
+  margin-top: 30px;
+}
+
+.left-banner hr {
+  width: 100%;
+  border: 0.5px solid #fff;
+  margin: 5px 0;
+}
+
+/* 본문 */
+.content {
+  flex: 1;
+  padding-left: 100px;
+}
+
+.user-info {
+  background-color: #ccc;
+  width: 300px;
+  height: 200px;
+  float: left;
+  margin-right: 100px;
+  padding-left: 50px;
+  padding: 50px;
+  font-size: 20px;
+}
+
+.loan-actions {
+  display: inline;
+  border: none;
+  background-color: rgb(255, 152, 255);
+  width: 40%;
+  height: 30%;
+  float: right;
+  margin-right: -20px;
+  margin-top: 20px;
+  font-size: 25px;
+  cursor: pointer;
+}
