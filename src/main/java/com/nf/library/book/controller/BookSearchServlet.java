@@ -1,4 +1,4 @@
-package com.nf.library.admin.controller;
+package com.nf.library.book.controller;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -8,16 +8,16 @@ import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 /**
- * Servlet implementation class MemberListServlet
+ * Servlet implementation class BookListservlet
  */
-@WebServlet("/MemberListServlet")
-public class MemberListServlet extends HttpServlet {
+@WebServlet("/book/search")
+public class BookSearchServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
     /**
      * Default constructor. 
      */
-    public MemberListServlet() {
+    public BookSearchServlet() {
         // TODO Auto-generated constructor stub
     }
 
