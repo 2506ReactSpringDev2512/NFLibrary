@@ -10,9 +10,9 @@
 
     <!-- 가운데 네브 -->
     <nav class="main-nav">
-    <c:if test="${memberId eq 'admin' }">
-        <a href="#">대출신청</a>
-        <a href="#">희망도서신청</a>
+    <c:if test="${not empty sessionScope.memberId }">
+        <a href="/loan/list">대출신청</a>
+        <a href="/wishbook">희망도서신청</a>
     </c:if>
         <a href="#">도서관 이용안내</a>
         <a href="#">공지사항</a>
