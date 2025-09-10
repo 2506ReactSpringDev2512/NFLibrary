@@ -1,4 +1,4 @@
-package com.nf.library.book.controller;
+package com.nf.library.member.controller;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -8,25 +8,26 @@ import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 /**
- * Servlet implementation class BookListservlet
+ * Servlet implementation class MyPageServlet
  */
-@WebServlet("/book/search")
-public class BookSearchServlet extends HttpServlet {
+@WebServlet("/member/mypage")
+public class MyPageServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-
+       
     /**
-     * Default constructor. 
+     * @see HttpServlet#HttpServlet()
      */
-    public BookSearchServlet() {
+    public MyPageServlet() {
+        super();
         // TODO Auto-generated constructor stub
-    	super();
     }
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.getRequestDispatcher("/WEB-INF/views/loan/search.jsp").forward(request, response);
+		request.getRequestDispatcher("/WEB-INF/views/member/mymain.jsp")
+		.forward(request, response);
 	}
 
 	/**

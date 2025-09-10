@@ -31,7 +31,7 @@
             <a href="https://www.youtube.com/@mol-ra-yo"><img src="/resources/image/youtube.png" width="28" alt="유튜브" /></a>
             <a href="https://www.instagram.com/prefer._.ho/#"><img src="/resources/image/instagram.png" width="28" alt="인스타그램" /></a>
             <a href="https://www.facebook.com/national.library.of.korea/?locale=ko_KR"><img src="/resources/image/Facebook.png" width="28" alt="페이스북" /></a>
-            <a href="https://x.com/library1004"><img src="resources/image/X.png" width="28" alt="X" /></a>
+            <a href="https://x.com/library1004"><img src="/resources/image/X.png" width="28" alt="X" /></a>
         </div>
     </div>
 </footer>

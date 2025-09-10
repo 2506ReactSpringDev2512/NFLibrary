@@ -11,28 +11,7 @@
   <link rel="stylesheet" href="<c:url value='/resources/css/common/reset.css'/>" />
 </head>
 <body>
-<header>
-  <!-- 왼쪽 로고 -->
-  <div class="logo">
-    <img src="<c:url value='/resources/image/KH_logo.png'/>" width="50" alt="KH로고" />도서관
-  </div>
-
-  <!-- 가운데 네브 -->
-  <nav class="main-nav">
-    <a href="<c:url value='/loan/apply'/>">대출신청</a>
-    <a href="<c:url value='/book/wish'/>">희망도서신청</a>
-    <a href="<c:url value='/guide'/>">도서관 이용안내</a>
-    <a href="<c:url value='/notice/list'/>">공지사항</a>
-  </nav>
-
-  <!-- 오른쪽 네브 -->
-  <nav class="user-nav">
-    <a href="<c:url value='/'/>">홈</a>
-    <a href="<c:url value='/logout'/>">로그아웃</a>
-    <a href="<c:url value='/mypage'/>">마이페이지</a>
-  </nav>
-</header>
-
+<jsp:include page="/WEB-INF/views/common/header.jsp"></jsp:include>
 <main class="container">
   <h1>기본정보 입력</h1>
   <p><span class="star">*</span>표시가 있는 항목은 필수 입력 항목 입니다.</p>
@@ -86,38 +65,6 @@
 </form>
 </main>
 
-<footer>
-  <div class="footer-container">
-    <!-- 왼쪽 -->
-    <div class="footer-left">
-      <img src="<c:url value='/resources/image/KH_logo.png'/>" width="40" alt="KH도서관 로고" />
-      <div class="footer-text">
-        <div class="top-line">
-          <strong>KH도서관</strong>
-          02742 서울특별시 중구 장충제일로 212 | TEL 02-2412-1113
-        </div>
-        <div class="bottom-line">Copyright(c) KH Library. All Rights Reserved</div>
-      </div>
-    </div>
-
-    <!-- 가운데 -->
-    <div class="footer-center">
-      <img src="<c:url value='/resources/image/KOGL.jpg'/>" width="80" alt="공공누리" />
-      <%-- 필요 시 파일 채워 사용
-      <img src="<c:url value='/resources/image/open.png'/>" width="40" alt="OPEN" />
-      <img src="<c:url value='/resources/image/service-mark.png'/>" width="40" alt="서비스마크" />
-      --%>
-    </div>
-
-    <!-- 오른쪽 -->
-    <div class="footer-right">
-      <a href="#"><img src="<c:url value='/resources/image/korea.png'/>" width="28" alt="한국" /></a>
-      <a href="#"><img src="<c:url value='/resources/image/youtube.png'/>" width="28" alt="유튜브" /></a>
-      <a href="#"><img src="<c:url value='/resources/image/instagram.png'/>" width="28" alt="인스타그램" /></a>
-      <a href="#"><img src="<c:url value='/resources/image/Facebook.png'/>" width="28" alt="페이스북" /></a>
-      <a href="#"><img src="<c:url value='/resources/image/X.png'/>" width="28" alt="X" /></a>
-    </div>
-  </div>
-</footer>
+<jsp:include page="/WEB-INF/views/common/footer.jsp"></jsp:include>
 </body>
 </html>

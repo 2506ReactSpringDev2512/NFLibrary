@@ -47,6 +47,7 @@ public class LoginServlet extends HttpServlet {
 			// 저장하는 이유는 세션 유지(일용자가 일용자임을 기억)
 			session.setAttribute("memberId", member.getMemberId());
 			session.setAttribute("memberName", member.getMemberName());
+			session.setAttribute("phone", member.getPhone());
 			// 여기까지가 로그인 성공이며 그 이후에는 메인페이지 이동
 			response.sendRedirect("/");
 		}else {
