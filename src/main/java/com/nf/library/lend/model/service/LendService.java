@@ -6,6 +6,7 @@ import java.util.List;
 
 import com.nf.library.common.JDBCTemplate;
 import com.nf.library.lend.model.dao.LendDAO;
+import com.nf.library.lend.model.vo.Lend;
 import com.nf.library.lend.model.vo.Wishbook;
 
 public class LendService {
@@ -92,5 +93,90 @@ public class LendService {
 		}
 		return count;
 	}
+
+	public int updateLendStatus(String book_no) {
+	    Connection conn = null;
+	    int result = 0;
+	    try {
+	        conn = jdbcTemplate.getConnection();
+	        conn.setAutoCommit(false); // 여기서 autoCommit 끄기
+	        result = lendDao.updateLendStatus(conn, book_no);
+	        if (result > 0) {
+	            jdbcTemplate.commit(conn);
+	        } else {
+	            jdbcTemplate.rollback(conn);
+	        }
+	    } catch (SQLException e) {
+	        e.printStackTrace();
+	        if (conn != null) {
+	            jdbcTemplate.rollback(conn);
+	        }
+	    } finally {
+	        if (conn != null) {
+	            jdbcTemplate.close(conn);
+	        }
+	    }
+	    return result;
+	}
+
+	public int insertLendInfo(String memberId, String book_no) {
+	    Connection conn = jdbcTemplate.getConnection();
+	    int result = 0;
+
+	    try {
+	        conn.setAutoCommit(false); // autoCommit 끄기
+	        result = lendDao.insertLendInfo(conn, memberId, book_no);
+	        if (result > 0) {
+	            jdbcTemplate.commit(conn);
+	        } else {
+	            jdbcTemplate.rollback(conn);
+	        }
+	    } catch (SQLException e) {
+	        jdbcTemplate.rollback(conn);
+	        e.printStackTrace();
+	    } finally {
+	        jdbcTemplate.close(conn);
+	    }
+
+	    return result;
+	}
+
+
+	public List<Lend> selectLendList() {
+		Connection	conn	=	null;
+		List<Lend>	list	=	null;
+		
+		try {
+			conn	=	jdbcTemplate.getConnection();
+			list	=	lendDao.selectLendList(conn);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			if(conn != null) {
+				try {
+					conn.close();
+				}
+				catch (SQLException e) {}
+			}
+		}
+		
+		return list;
+	}
+
+	public List<Lend> searchBooks(String keyword) {
+		Connection	conn	=	null;
+		List<Lend>	list	=	null;
+		
+		try {
+			conn	=	jdbcTemplate.getConnection();
+			list	=	lendDao.searchbooks(conn, keyword);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			jdbcTemplate.close(conn);
+		}
+		return list;
+	}
+	
 
 }

@@ -7,6 +7,7 @@ public class Wishbook {
 	private	String	wishbook_publisher;
 	private	String	wishbook_status;
 	private	String	name;
+	private String 	member_id;
 	
 	public 	Wishbook() {}
 	
@@ -15,12 +16,12 @@ public class Wishbook {
 						String	wishbook_author,
 						String	wishbook_publisher,
 						String	wishbook_status,
-						String	name) {
+						String	member_id) {
 		this.wishbook_name		=		wishbook_name;
 		this.wishbook_author	=		wishbook_author;
 		this.wishbook_publisher	=		wishbook_publisher;
 		this.wishbook_status	=		wishbook_status;
-		this.name				=		name;
+		this.member_id			=		member_id;
 }
 	
 	
@@ -85,12 +86,20 @@ public class Wishbook {
 	public void setName(String name) {
 		this.name = name;
 	}
+	
+	public String getMember_id() {
+	    return member_id;
+	}
+	
+	public void setMember_id(String member_id) {
+	    this.member_id = member_id;
+	}
 
 	@Override
 	public String toString() {
 		return "Wishbook [wishbook_num=" + wishbook_no + ", wishbook_name=" + wishbook_name + ", wishbook_author="
 				+ wishbook_author + ", wishbook_publisher=" + wishbook_publisher + ", wishbook_status="
-				+ wishbook_status + ", name=" + name + "]";
+				+ wishbook_status + ", name=" + name + "], member_id = [ "	+ member_id + " ] ";
 	}
 	
 }

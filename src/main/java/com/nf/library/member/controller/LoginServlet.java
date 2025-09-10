@@ -39,7 +39,7 @@ public class LoginServlet extends HttpServlet {
 		String memberPw = request.getParameter("memberPw");
 		Member member = new Member(memberId, memberPw);
 		MemberService mService = new MemberService();
-		member = mService.checkLogin(member);
+		member = mService.checkLogin(member);		
 		if(member != null) {
 			// 세션 생성
 			HttpSession session = request.getSession();

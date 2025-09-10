@@ -10,29 +10,19 @@
 	<link href="${pageContext.request.contextPath}/resources/css/common/reset.css" rel="stylesheet" />
     <title>Document</title>
 </head>
+<script>
+function confirmSubmit() {
+    if (confirm('작성하시겠습니까?')) {
+        alert('작성되었습니다.');
+        return true; 
+    } else {
+        return false;
+    }
+}
+</script>
 <body>
     <!-- 헤더 -->
-    <header>
-    <!-- 왼쪽 로고 -->
-    <div class="logo">
-        <img src="../../image/KH_logo.png" width="50" alt="KH로고">도서관
-    </div>
-
-    <!-- 가운데 네브 -->
-    <nav class="main-nav">
-        <a href="#">대출신청</a>
-        <a href="#">희망도서신청</a>
-        <a href="#">도서관 이용안내</a>
-        <a href="#">공지사항</a>
-    </nav>
-
-    <!-- 오른쪽 네브 -->
-    <nav class="user-nav">
-        <a href="#">홈</a>
-        <a href="#">로그아웃</a>
-        <a href="#">마이페이지</a>
-    </nav>
-    </header>
+	<jsp:include page="/WEB-INF/views/common/header.jsp"></jsp:include>
 
     <!-- 메인 -->
     <div class="layout">
@@ -60,7 +50,7 @@
                     <label for="">출판사</label>
                     <input type="text" name="wishbook_publisher" required>
 					<div class="write-container">
-					<button type="submit" class="write">글쓰기</button>            		
+					<button type="submit" class="write" onclick="return confirmSubmit();">글쓰기</button>            		
             		</div>
                     <label for="">유의사항</label>
                     <div class="infomation">
@@ -83,38 +73,6 @@
     </div>
         
     <!-- 푸터 -->
-    <footer>
-    <div class="footer-container">
-    <!-- 왼쪽 -->
-    <div class="footer-left">
-        <img src="../../image/KH_logo.png" width="40" alt="KH도서관 로고">
-        <div class="footer-text">
-        <div class="top-line">
-            <strong>KH도서관</strong>
-            02742 서울특별시 중구 장충제일로 212 | TEL 02-2412-1113
-        </div>
-        <div class="bottom-line">
-            Copyright(c) KH Library. All Rights Reserved
-        </div>
-        </div>
-    </div>
-
-    <!-- 가운데 -->
-    <div class="footer-center">
-        <img src="../../image/KOGL.jpg" width="80" alt="공공누리">
-        <img src="../../image/" width="40" alt="OPEN">
-        <img src="../../image/" width="40" alt="서비스마크">
-    </div>
-
-    <!-- 오른쪽 -->
-    <div class="footer-right">
-        <a href="#"><img src="../../image/korea.png" width="28" alt="한국"></a>
-        <a href="#"><img src="../../image/youtube.png" width="28" alt="유튜브"></a>
-        <a href="#"><img src="../../image/instagram.png" width="28" alt="인스타그램"></a>
-        <a href="#"><img src="../../image/facebook.png" width="28" alt="페이스북"></a>
-        <a href="#"><img src="../../image/X.png" width="28" alt="X"></a>
-    </div>
-    </div>
-</footer>
+    <jsp:include page="/WEB-INF/views/common/footer.jsp"></jsp:include>
 </body>
 </html>

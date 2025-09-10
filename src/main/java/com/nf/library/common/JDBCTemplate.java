@@ -23,7 +23,7 @@ public class JDBCTemplate {
 		
 	}
 	
-	public 			Connection		getConnection()	{
+	public 	Connection	getConnection()	{
 		
 		Connection	conn = null;
 		try {
@@ -35,4 +35,38 @@ public class JDBCTemplate {
 		return conn;
 		
 	}
+
+	public 	void 	commit(Connection conn) {
+		try {
+			if (conn != null && !conn.isClosed()) {
+				conn.commit();
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+	}
+
+	public 	void 	rollback(Connection conn) {
+		try {
+			if (conn != null && !conn.isClosed()) {
+				conn.rollback();		
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+	}
+
+	public 	void 	close(Connection conn) {
+		try {
+			if (conn != null && !conn.isClosed()) {
+				conn.close();
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+	}
+
 }

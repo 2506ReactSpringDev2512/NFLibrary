@@ -5,6 +5,8 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
+
 import java.io.IOException;
 
 import com.nf.library.lend.model.service.LendService;
@@ -18,18 +20,27 @@ public class AddWishbookServlet extends HttpServlet {
         super();
     }
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		HttpSession session = request.getSession(false);
+	    if (session == null || session.getAttribute("memberId") == null) {
+	        // 로그인 안 됐으면 로그인 페이지로 이동
+	    	response.sendRedirect(request.getContextPath() + "/member/login?msg=loginNeeded");
+	        return;
+	    }
 		request.getRequestDispatcher("/WEB-INF/views/loan/addwishbook.jsp").forward(request, response);
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		HttpSession session = request.getSession();
 		String		wishbook_name		=	request.getParameter("wishbook_name");
 		String		wishbook_author		=	request.getParameter("wishbook_author");
 		String		wishbook_publisher	=	request.getParameter("wishbook_publisher");
 		String		wishbook_status		=	request.getParameter("wishbook_status");
-		String		name				=	request.getParameter("name");
+		String 		member_id 			= 	(String) session.getAttribute("memberId");
+		String 		member_Name 		= 	(String) session.getAttribute("memberName");
+		System.out.println("세션 memberId: " + member_id);
+		System.out.println("세션 memberName: " + member_Name);
 		
-		Wishbook	wishbook			=	new Wishbook(	wishbook_name, wishbook_author,
-															wishbook_publisher, wishbook_status, name );
+		Wishbook wishbook = new Wishbook(wishbook_name, wishbook_author, wishbook_publisher, wishbook_status, member_id);
 		LendService	lendService			=	new	LendService();
 		int			result				=	lendService.insertWishBook(wishbook);
 		

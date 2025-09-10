@@ -26,7 +26,7 @@ public class MemberService {
 			e.printStackTrace();
 		}
 		return mOne;
-	}
+	} 
 	
 	public int insertMember(Member member) {
 		int result = 0;

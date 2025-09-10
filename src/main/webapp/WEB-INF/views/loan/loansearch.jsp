@@ -1,36 +1,19 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>대출 조회</title>
-    <link rel="stylesheet" href="./loanSearch.css" />
-    <link rel="stylesheet" href="../common/commonpage.css">
-    <link rel="stylesheet" href="../common/reset.css">
+    <link href="${pageContext.request.contextPath}/resources/css/loan/loansearch.css" rel="stylesheet" />
+	<link href="${pageContext.request.contextPath}/resources/css/common/commonpage.css" rel="stylesheet" />
+	<link href="${pageContext.request.contextPath}/resources/css/common/reset.css" rel="stylesheet" />
   </head>
   <body>
-    <!-- 헤더 -->
-    <header>
-    <!-- 왼쪽 로고 -->
-    <div class="logo">
-        <img src="../../image/KH_logo.png" width="50" alt="KH로고">도서관
-    </div>
-
-    <!-- 가운데 네브 -->
-    <nav class="main-nav">
-        <a href="#">대출신청</a>
-        <a href="#">희망도서신청</a>
-        <a href="#">도서관 이용안내</a>
-        <a href="#">공지사항</a>
-    </nav>
-
-    <!-- 오른쪽 네브 -->
-    <nav class="user-nav">
-        <a href="#">홈</a>
-        <a href="#">로그아웃</a>
-        <a href="#">마이페이지</a>
-    </nav>
-    </header>
+	<!-- 헤더 -->
+	<jsp:include page="/WEB-INF/views/common/header.jsp"></jsp:include>
     <div class="layout">
       <!-- 좌측 배너 -->
       <div class="left-banner">
