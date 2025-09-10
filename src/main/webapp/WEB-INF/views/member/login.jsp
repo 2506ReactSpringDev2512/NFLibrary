@@ -8,6 +8,11 @@
 <title>회원관리 프로그램</title>
 </head>
 <body>
+	<c:if test="${param.msg == 'loginNeeded'}">
+    <script>
+        alert('로그인이 필요합니다.');
+    </script>
+	</c:if>
 	<h1>로그인 - 신선호</h1>
 	<c:if test="${memberId eq null }">
 		<form action="/member/login" method="post">

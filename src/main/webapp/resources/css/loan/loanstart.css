@@ -116,3 +116,13 @@
 .apply-btn:hover{ 
     filter:brightness(.97) 
 }
+
+.apply-btn2{
+    font-size:12px; 
+    padding:4px 10px; 
+    border-radius:6px; 
+    cursor:pointer;
+    background:#cecece; 
+    border:1px solid #1c1c1c; 
+    color:#1c1c1c;
+}
