@@ -10,14 +10,14 @@ import java.io.IOException;
 /**
  * Servlet implementation class BookListservlet
  */
-@WebServlet("/BookListservlet")
-public class BookListservlet extends HttpServlet {
+@WebServlet("/book/search")
+public class BookSearchServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
     /**
      * Default constructor. 
      */
-    public BookListservlet() {
+    public BookSearchServlet() {
         // TODO Auto-generated constructor stub
     }
 

@@ -44,6 +44,7 @@ public class WishbookServlet extends HttpServlet {
 		// 게시글 보여주기
 		List<Wishbook>	wList		=	lService.selectList();	
 		if(wList.size() > 0) {
+			System.out.println("WishbookServlet 호출됨");
 			request.setAttribute("count", wList.size());
 			request.setAttribute("wList", wList);
 			request.getRequestDispatcher("/WEB-INF/views/loan/wishbook.jsp").forward(request, response);
