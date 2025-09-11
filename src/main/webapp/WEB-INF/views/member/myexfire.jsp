@@ -18,10 +18,10 @@
     <!-- 좌측 배너 -->
     <div class="left-banner">
       <h3>마이페이지</h3>
-      <a href="<c:url value='/mypage/edit'/>">내 정보 수정</a><hr />
-      <a href="<c:url value='/loan/list'/>">대출 조회</a><hr />
-      <a href="<c:url value='/book/wish/list'/>">희망 도서 신청 조회</a><hr />
-      <a href="<c:url value='/member/withdraw'/>">회원 탈퇴</a><hr />
+      <a href="/mypage/edit">내 정보 수정</a><hr />
+      <a href="#">대출 조회</a><hr />
+      <a href="#">희망 도서 신청 조회</a><hr />
+      <a href="member/exfire">회원 탈퇴</a><hr />
     </div>
 
     <!-- 본문 -->
@@ -37,7 +37,7 @@
       <!-- 탈퇴 확인 폼 -->
       <form action="/member/leave" method="post">
         <input type="hidden" name="memberId" value="${sessionScope.memberId}" />
-        <input type="password" id="inputPw" name="memberPw" class="edit_profile" placeholder="비밀번호를 입력하세요" required />
+        <input type="text" id="inputPw" name="memberId" class="edit_profile" placeholder="비밀번호를 입력하세요" required />
         <div class="btn_wrap" style="margin-top:16px;">
           <button type="button" class="btn" onclick="location.href='<c:url value='/'/>'">취소</button>
           <button type="submit" class="btn">탈퇴하기</button>
