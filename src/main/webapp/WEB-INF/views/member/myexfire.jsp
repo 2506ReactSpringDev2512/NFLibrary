@@ -35,14 +35,10 @@
       </p>
 
       <!-- 탈퇴 확인 폼 -->
-      <form action="/member/leave" method="post">
-        <input type="hidden" name="memberId" value="${sessionScope.memberId}" />
-        <input type="text" id="inputPw" name="memberId" class="edit_profile" placeholder="비밀번호를 입력하세요" required />
-        <div class="btn_wrap" style="margin-top:16px;">
-          <button type="button" class="btn" onclick="location.href='<c:url value='/'/>'">취소</button>
-          <button type="submit" class="btn">탈퇴하기</button>
-        </div>
-      </form>
+      <form action="/member/exfire" method="post">
+		삭제할 아이디 입력 : <input type="text" name="memberId">
+		<input type="submit" value="삭제">
+	</form>
     </main>
   </div>
 
