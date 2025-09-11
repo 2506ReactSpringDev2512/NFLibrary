@@ -1,33 +1,31 @@
-	<%@ page language="java" contentType="text/html; charset=UTF-8"
-	    pageEncoding="UTF-8"%>
-	    
-	<%@ page import = "java.util.List"%>
-	<%@ page import = "com.nf.library.lend.model.vo.Wishbook" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ page import = "java.util.List"%>
+<%@ page import = "com.nf.library.lend.model.vo.Wishbook" %>
 	
-	<%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
+<%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
 	
-	<% 
-		List<Wishbook> wList = (List<Wishbook>)request.getAttribute("wList");
-	%>
+<% 
+	List<Wishbook> wList = (List<Wishbook>)request.getAttribute("wList");
+%>
 	
-	<%
+<%
     String memberId = (String) session.getAttribute("memberId");
-	%>
-	
-	<!DOCTYPE html>
-	<html lang="en">
-	<head>
-	    <meta charset="UTF-8">
-	    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<link href="${pageContext.request.contextPath}/resources/css/loan/wishbook.css" rel="stylesheet" />
+%>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>내 요청 도서 조회</title>
+    	<link href="${pageContext.request.contextPath}/resources/css/admin/adminpage_wishbook.css" rel="stylesheet" />
 		<link href="${pageContext.request.contextPath}/resources/css/common/commonpage.css" rel="stylesheet" />
 		<link href="${pageContext.request.contextPath}/resources/css/common/reset.css" rel="stylesheet" />
-	    <title>KH도서관</title>
-	</head>
-	<script>
+  </head>
+  	<script>
     const memberId = '<%= memberId != null ? memberId : "" %>';
     
-    function goToAddWishbook() {
+    function changestatus() {
         if (!memberId) {
             alert("로그인이 필요합니다.");
             window.location.href = '/member/login';
@@ -35,15 +33,29 @@
             window.location.href = '/addwishbook';
         }
     }
+    function deletewishbook() {
+	
+    }
 	</script>
-	<body>
-		<!-- 헤더 -->
+  <body>
+    <!-- 헤더 -->
 		<jsp:include page="/WEB-INF/views/common/header.jsp"></jsp:include>
-	    <!-- 메인 -->
-	    <div class="layout">
+      <!-- 본문 -->
+      <div class="layout">
 	        <!-- 좌측 배너 -->
+		 <div class="left-banner">
+        <h3 style="color : red;">어드민페이지</h3>
+        <a href="#">내 정보 수정</a>
+        <hr />
+        <a href="#">대출 조회</a>
+        <hr />
+        <a href="#">희망 도서 신청 조회</a>
+        <hr />
+        <a href="#">회원 탈퇴</a>
+        <hr />
+      </div>
 	        <main class="content">
-	            <h1>희망 도서 신청</h1>
+	            <h1>희망 도서 신청 확인</h1>
 	            <hr>
 	            <div class="list-container"> 
 	                <c:if test="${empty wList}">
@@ -57,6 +69,7 @@
 	                    <th class="list-bookauthor">저자</th>
 	                    <th class="list-bookpublisher">출판사</th>
 	                    <th class="list-status">상태</th>
+	                    <th class="list-name">작성자</th>
 	                </tr>
 	            </thead>
 	            <tbody>
@@ -77,6 +90,10 @@
                 			<td class="check">${book.wishbook_status}</td>
             			</c:when>
         				</c:choose>
+    				</tr>
+    				<tr>
+    					<td><button>상태변경</button></td>
+    					<td><button>삭제</button></td>
     				</tr>
 					</c:forEach>
 	            </tbody>
@@ -100,14 +117,10 @@
 	    	</c:forEach>
 			</div>
 	
-	        <div class="write-container">
-	            <button class="write" onClick="goToAddWishbook()">글쓰기</button>
-	        </div>
 	        </div>
 	        </main>
 	    </div>
-	        
-    <!-- 푸터 -->
+    	<!-- 푸터 -->
     <jsp:include page="/WEB-INF/views/common/footer.jsp"></jsp:include>
-	</body>
-	</html>
+  </body>
+</html>

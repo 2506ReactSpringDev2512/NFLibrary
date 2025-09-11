@@ -21,8 +21,8 @@
     <div class="left-banner">
       <h3>마이페이지</h3>
       <a href="/member/edit">내 정보 수정</a><hr />
-      <a href="#">대출 조회</a><hr />
-      <a href="/wishbook">희망 도서 신청 조회</a><hr />
+      <a href="/member/loan">대출 조회</a><hr />
+      <a href="/member/wishbook">희망 도서 신청 조회</a><hr />
       <a href="/member/exfire">회원 탈퇴</a><hr />
     </div>
 

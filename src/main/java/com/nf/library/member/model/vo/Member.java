@@ -9,7 +9,6 @@ public class Member {
 	private int age;
 	private String checkAd;
 	
-	
 	public Member() {
 		super();
 	}

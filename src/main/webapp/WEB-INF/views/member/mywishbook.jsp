@@ -42,8 +42,15 @@
 	    <!-- 메인 -->
 	    <div class="layout">
 	        <!-- 좌측 배너 -->
+	        <div class="left-banner">
+	            <h3>마이페이지</h3>
+<a href="/member/edit">내 정보 수정</a><hr />
+      <a href="/member/loan">대출 조회</a><hr />
+      <a href="/member/wishbook">희망 도서 신청 조회</a><hr />
+      <a href="/member/exfire">회원 탈퇴</a><hr />
+	        </div>
 	        <main class="content">
-	            <h1>희망 도서 신청</h1>
+	            <h1>내 도서 신청 관리</h1>
 	            <hr>
 	            <div class="list-container"> 
 	                <c:if test="${empty wList}">
@@ -60,7 +67,7 @@
 	                </tr>
 	            </thead>
 	            <tbody>
-	            	<c:forEach items="${WList}" var="book" varStatus="status">
+	            	<c:forEach items="${wList}" var="book" varStatus="status">
     				<tr>
         				<td>${(currentPage - 1) * 10 + status.index + 1}</td> <!-- 전체 번호 계산 -->
         				<td>${book.wishbook_name}</td>
@@ -81,28 +88,6 @@
 					</c:forEach>
 	            </tbody>
 	            </table>
-	        </div>
-	        <div class="button-write-container">
-	        <div class="button-container">
-	    	<c:if test="${empty currentPage}">
-	        	<c:set var="currentPage" value="1"/>
-	    	</c:if>
-	
-	    	<c:if test="${totalPages < 1}">
-	        	<c:set var="totalPage" value="1"/>
-	    	</c:if>
-	
-	    	<c:forEach begin="1" end="${totalPages}" var="i">
-	        <button		class="${i == currentPage ? 'checked' : 'unchecked'}"
-	            		onclick="location.href='${pageContext.request.contextPath}/wishbook?page=${i}'">
-	            ${i}
-	        </button>
-	    	</c:forEach>
-			</div>
-	
-	        <div class="write-container">
-	            <button class="write" onClick="goToAddWishbook()">글쓰기</button>
-	        </div>
 	        </div>
 	        </main>
 	    </div>
