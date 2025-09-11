@@ -1,15 +1,14 @@
 package com.nf.library.notice.controller;
 
-import jakarta.servlet.RequestDispatcher;
+import java.io.IOException;
+
+import com.nf.library.notice.model.service.NoticeService;
+
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import java.io.IOException;
-
-import com.nf.library.notice.service.NoticeService;
-import com.nf.library.notice.vo.Notice;
 
 /**
  * Servlet implementation class AdminNoticeDetailServlet

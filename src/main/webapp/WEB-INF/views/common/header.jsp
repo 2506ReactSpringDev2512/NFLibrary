@@ -15,7 +15,7 @@
         <a href="/wishbook">희망도서신청</a>
     </c:if>
         <a href="/library/guide">도서관 이용안내</a>
-        <a href="#">공지사항</a>
+        <a href="/notice/list">공지사항</a>
     </nav>
 
     <!-- 오른쪽 네브 -->
