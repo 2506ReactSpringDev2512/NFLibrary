@@ -77,7 +77,7 @@ public class NoticeDAO {
 	public List<Notice> searchKeyword(String keyword, Connection conn) throws SQLException {
 		PreparedStatement pstmt = null;
 		ResultSet rset = null;
-		String query = "SELECT * FROM NOTICE_TBL WHERE NOTICE_SUBJECT LIKE '%'||?||'%' ORDER BY NOTICE_NO DESC";
+		String query = "SELECT * FROM NOTICE_TBL WHERE NOTICE_SUBJECT LIKE '%'||?||'%' ORDER BY NOTICE_NO ASC";
 		pstmt = conn.prepareStatement(query);
 		pstmt.setString(1, keyword);
 		rset = pstmt.executeQuery();

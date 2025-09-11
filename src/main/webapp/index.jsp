@@ -15,7 +15,9 @@
     <div class="bg"></div>
     <div class="content">
         <h1>KH도서관에 오신 것을 환영합니다!</h1>
-        <input type="text" class="search-bar" placeholder="검색어를 입력해주세요" />
+        <form action="/book/search" method="post">
+        <input type="text" name="searchBook" class="search-bar" placeholder="검색어를 입력해주세요" />
+        </form>
     </div>
 </main>
 
