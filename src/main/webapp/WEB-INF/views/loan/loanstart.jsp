@@ -27,13 +27,13 @@ function loancomplete() {
         <!-- 좌측 배너 -->
         <div class="left-banner">
         <h3>마이페이지</h3>
-        <a href="#">내 정보 수정</a>
+        <a href="/member/edit">내 정보 수정</a>
         <hr />
         <a href="#">대출 조회</a>
         <hr />
         <a href="#">희망 도서 신청 조회</a>
         <hr />
-        <a href="#">회원 탈퇴</a>
+        <a href="/member/exfire">회원 탈퇴</a>
         <hr />
         </div>
 
@@ -87,38 +87,6 @@ function loancomplete() {
 </main>
     </div>
     <!-- 푸터 -->
-    <footer>
-    <div class="footer-container">
-    <!-- 왼쪽 -->
-    <div class="footer-left">
-        <img src="../../image/KH_logo.png" width="40" alt="KH도서관 로고">
-        <div class="footer-text">
-        <div class="top-line">
-            <strong>KH도서관</strong>
-            02742 서울특별시 중구 장충제일로 212 | TEL 02-2412-1113
-        </div>
-        <div class="bottom-line">
-            Copyright(c) KH Library. All Rights Reserved
-        </div>
-        </div>
-    </div>
-
-    <!-- 가운데 -->
-    <div class="footer-center">
-        <img src="../../image/KOGL.jpg" width="80" alt="공공누리">
-        <img src="../../image/" width="40" alt="OPEN">
-        <img src="../../image/" width="40" alt="서비스마크">
-    </div>
-
-    <!-- 오른쪽 -->
-    <div class="footer-right">
-        <a href="#"><img src="../../image/korea.png" width="28" alt="한국"></a>
-        <a href="#"><img src="../../image/youtube.png" width="28" alt="유튜브"></a>
-        <a href="#"><img src="../../image/instagram.png" width="28" alt="인스타그램"></a>
-        <a href="#"><img src="../../image/facebook.png" width="28" alt="페이스북"></a>
-        <a href="#"><img src="../../image/X.png" width="28" alt="X"></a>
-    </div>
-    </div>
-</footer>
+    <jsp:include page="/WEB-INF/views/common/footer.jsp"></jsp:include>
 </body>
 </html>
