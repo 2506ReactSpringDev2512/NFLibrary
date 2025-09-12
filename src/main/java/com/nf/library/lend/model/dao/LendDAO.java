@@ -195,4 +195,22 @@ public class LendDAO {
 		return list;
 	}
 	
+	public int updateWishbookStatus(Connection conn, int wishbookNo, String newStatus) throws SQLException {
+	    String query = "UPDATE WISHBOOK_TBL SET WISHBOOK_STATUS = ? WHERE WISHBOOK_NO = ?";
+	    try (PreparedStatement pstmt = conn.prepareStatement(query)) {
+	        pstmt.setString(1, newStatus);
+	        pstmt.setInt(2, wishbookNo);
+	        return pstmt.executeUpdate();
+	    }
+	}
+
+	// 삭제
+	public int deleteWishbook(Connection conn, int wishbookNo) throws SQLException {
+	    String query = "DELETE FROM WISHBOOK_TBL WHERE WISHBOOK_NO = ?";
+	    try (PreparedStatement pstmt = conn.prepareStatement(query)) {
+	        pstmt.setInt(1, wishbookNo);
+	        return pstmt.executeUpdate();
+	    }
+	}
+	
 }

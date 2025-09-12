@@ -119,5 +119,7 @@ public class Member {
 		return "Member [memberId=" + memberId + ", memberPw=" + memberPw + ", memberName=" + memberName + ", Phone="
 				+ Phone + ", gender=" + gender + ", age=" + age + ", checkAd=" + checkAd + "]";
 	}
+
+
 	
 }

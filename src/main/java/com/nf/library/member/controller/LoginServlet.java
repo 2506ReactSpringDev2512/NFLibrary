@@ -48,6 +48,7 @@ public class LoginServlet extends HttpServlet {
 			session.setAttribute("memberId", member.getMemberId());
 			session.setAttribute("memberName", member.getMemberName());
 			session.setAttribute("phone", member.getPhone());
+			session.setAttribute("adminYn", member.getCheckAd()); 
 			// 여기까지가 로그인 성공이며 그 이후에는 메인페이지 이동
 			response.sendRedirect("/");
 		}else {
