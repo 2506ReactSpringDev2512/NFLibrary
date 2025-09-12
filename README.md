@@ -1,4 +1,4 @@
-화# 📚 NFLibrary
+# 📚 NFLibrary
 
 **NFLibrary**는 JSP/Servlet 기반의 도서관 웹 애플리케이션입니다.  
 도서 검색과 대출/반납, 희망도서 신청, 공지사항, 회원 관리 기능을 제공하며,  
