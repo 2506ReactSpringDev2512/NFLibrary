@@ -6,10 +6,29 @@ DAO–Service–Controller의 MVC 아키텍처로 구현되었습니다.
 
 ---
 
+## 🚀 주요 기능
+- **도서 관리**
+  - 도서 검색 및 상세 조회
+  - 대출, 반납, 희망도서 신청
+- **회원 관리**
+  - 회원가입, 로그인/로그아웃
+  - 마이페이지(정보 수정, 탈퇴, 대출 내역 확인)
+- **공지사항**
+  - 공지사항 등록, 수정, 삭제, 조회
+- **공통**
+  - 에러 처리 페이지
+  - 공통 레이아웃(header/footer)
 
-# 팀명
-- 404 NOT FOUND
-# 신선호 - 안태현 - 김승재
+---
+
+## 🛠 기술 스택
+- **Language**: Java
+- **Web**: JSP, Servlet
+- **Server**: Apache Tomcat 11
+- **DB**: Oracle (JDBC Template 이용)
+- **Build/IDE**: Eclipse (Dynamic Web Project)
+
+---
 
 
 # [ 맡은 부분 ] - 신선호 -
