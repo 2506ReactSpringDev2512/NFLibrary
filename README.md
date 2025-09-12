@@ -93,48 +93,48 @@ JSP(View)  ←  forward by Controller <br>
 ---
 
 ## 구현 페이지
-1. 메인페이지
+## 1. 메인페이지
 <img width="1920" height="1080" alt="메인페이지" src="https://github.com/user-attachments/assets/9ba1303b-3785-43ba-86b2-4bb5bf01c044" /> <br>
-2. 로그인페이지
+## 2. 로그인페이지
 <img width="1920" height="1080" alt="로그인페이지" src="https://github.com/user-attachments/assets/67802d38-8440-4a3a-8f18-a08687597c67" /> <br>
-3. 로그인 후 메인 페이지
+## 3. 로그인 후 메인 페이지
 <img width="1920" height="1080" alt="로그인후페이지" src="https://github.com/user-attachments/assets/f28e7670-fa54-4f50-8bf9-250c64399e9d" /> <br>
-4. 회원 가입 페이지
+## 4. 회원 가입 페이지
 <img width="1395" height="785" alt="회원 가입 페이지" src="https://github.com/user-attachments/assets/4bb5605d-3dc7-460a-b2fc-918f16f1c2ee" /> <br>
-5. 도서관 이용안내 페이지 
+## 5. 도서관 이용안내 페이지 
 <img width="954" height="875" alt="도서관이용안내" src="https://github.com/user-attachments/assets/0abb4e63-a42c-4ac4-bcb7-c494f053c923" /> <br>
-6. 공지사항 메인 페이지
+## 6. 공지사항 메인 페이지
 <img width="1920" height="1080" alt="공지사항메인" src="https://github.com/user-attachments/assets/85379d14-64ee-49a7-8fd6-f590e5291352" /> <br>
-7. 공지사항 등록 페이지(관리자)
+## 7. 공지사항 등록 페이지(관리자)
 <img width="892" height="851" alt="공지사항등록" src="https://github.com/user-attachments/assets/88619619-86c3-4420-83d7-909de2bfa469" /> <br>
-8. 공지사항 디테일 페이지
+## 8. 공지사항 디테일 페이지
 <img width="1140" height="867" alt="공지사항디테일" src="https://github.com/user-attachments/assets/1692c473-714f-40b5-a6e0-69f750af3a91" /> <br>
-10. 공지사항 삭제(버튼)(관리자일때만)
+## 10. 공지사항 삭제(버튼)(관리자일때만)
 <img width="1145" height="876" alt="공지사항삭제" src="https://github.com/user-attachments/assets/3b6d6794-8f44-4888-ab4e-5e8dbe68766d" /> <br>
-11. 서적검색
+## 11. 서적검색
 <img width="1920" height="1080" alt="서적검색" src="https://github.com/user-attachments/assets/91bfbd16-3586-41d8-be8f-0a91018e959d" /> <br>
-12. 검색란 검색
+## 12. 검색란 검색
 <img width="1920" height="1080" alt="석적검색검색란" src="https://github.com/user-attachments/assets/a5a71c71-2371-478e-96f6-ec10cdf8978c" /> <br>
-13. 희망도서신청(메인)
+## 13. 희망도서신청(메인)
 <img width="1920" height="1080" alt="희망도서신청" src="https://github.com/user-attachments/assets/53d14cc5-b3c8-4492-9aa9-e481697a6c6d" /> <br>
-14. 희망도서신청(글쓰기)
+## 14. 희망도서신청(글쓰기)
 <img width="1920" height="1080" alt="희망도서글쓰기" src="https://github.com/user-attachments/assets/16a20f0c-8514-4804-b200-b26e1904e92b" /> <br>
-15. 도서대출
+## 15. 도서대출
 <img width="1920" height="1080" alt="도서대출" src="https://github.com/user-attachments/assets/c62250dc-7980-4fb4-9197-6af3822669f9" /> <br>
-16. 도서대출(신청)
-<img width="1920" height="1080" alt="도서대출신청" src="https://github.com/user-attachments/assets/2a3ddeb9-a7f0-4d79-9b5a-4b39b4832d42" />
-17. 도서대출(신청후)
-<img width="1920" height="1080" alt="도서대출신청후" src="https://github.com/user-attachments/assets/bc8f9705-943a-4217-af71-182be4420cb9" />
-18. 마이페이지
-<img width="1920" height="1080" alt="마이페이지" src="https://github.com/user-attachments/assets/0e990f8c-6508-4650-9a2f-82090813100f" />
-19. 내정보 수정
-<img width="1920" height="1080" alt="내정보수정" src="https://github.com/user-attachments/assets/78da7363-2589-4340-994b-dc1fad12ae2a" />
-20. 대출조회
-<img width="1920" height="1080" alt="대출조회" src="https://github.com/user-attachments/assets/3d631ebf-555d-43e5-a2a8-cdd1236c97db" />
-21. 희망도서 신청조회
-<img width="1920" height="1080" alt="희망도서신청조회" src="https://github.com/user-attachments/assets/844bfd8b-4ced-46df-81e7-2f813f271aa3" />
-22. 회원탈퇴
-<img width="1920" height="1080" alt="회원탈퇴" src="https://github.com/user-attachments/assets/5a860961-b456-4360-bb41-7b65eccde62f" />
+## 16. 도서대출(신청)
+<img width="1920" height="1080" alt="도서대출신청" src="https://github.com/user-attachments/assets/2a3ddeb9-a7f0-4d79-9b5a-4b39b4832d42" /> <br>
+## 17. 도서대출(신청후)
+<img width="1920" height="1080" alt="도서대출신청후" src="https://github.com/user-attachments/assets/bc8f9705-943a-4217-af71-182be4420cb9" /> <br>
+## 18. 마이페이지
+<img width="1920" height="1080" alt="마이페이지" src="https://github.com/user-attachments/assets/0e990f8c-6508-4650-9a2f-82090813100f" /> <br>
+## 19. 내정보 수정
+<img width="1920" height="1080" alt="내정보수정" src="https://github.com/user-attachments/assets/78da7363-2589-4340-994b-dc1fad12ae2a" /> <br>
+## 20. 대출조회
+<img width="1920" height="1080" alt="대출조회" src="https://github.com/user-attachments/assets/3d631ebf-555d-43e5-a2a8-cdd1236c97db" /> <br>
+## 21. 희망도서 신청조회
+<img width="1920" height="1080" alt="희망도서신청조회" src="https://github.com/user-attachments/assets/844bfd8b-4ced-46df-81e7-2f813f271aa3" /> <br>
+## 22. 회원탈퇴
+<img width="1920" height="1080" alt="회원탈퇴" src="https://github.com/user-attachments/assets/5a860961-b456-4360-bb41-7b65eccde62f" /> <br>
 
 
 
