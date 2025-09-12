@@ -76,14 +76,14 @@ DAO–Service–Controller의 MVC 아키텍처로 구현되었습니다.
 ## 📚 KH Library – JSP/Servlet
 - 회원가입/로그인, 마이페이지, 희망도서(위시북) 조회, 계정삭제 흐름을 JSP · Servlet · JSTL로 구현했습니다.
 Servlet (Controller) <br>
-  ↓
+  ↓ <br>
 Service <br>
-  ↓
+  ↓ <br>
 DAO (JDBC) <br>
-  ↓
+  ↓ <br>
 DB <br>
-  ↑
-JSP(View)  ←  forward by Controller
+  ↑ <br>
+JSP(View)  ←  forward by Controller <br>
 이 순서대로 구현하였습니다.
 
 ---
