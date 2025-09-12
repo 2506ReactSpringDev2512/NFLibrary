@@ -27,7 +27,6 @@ public class BookDAO {
 			book.setBookName(rset.getString("BOOK_NAME"));
 			book.setBookAuthor(rset.getString("BOOK_PUBLISHER"));
 			book.setLendYN(rset.getString("LEND_YN"));
-			book.setBookImg(rset.getString("BOOK_IMG"));
 			bList.add(book);
 		}
 		rset.close();
