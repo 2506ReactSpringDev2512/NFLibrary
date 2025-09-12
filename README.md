@@ -101,7 +101,9 @@ JSP(View)  ←  forward by Controller <br>
 <img width="1920" height="1080" alt="로그인페이지" src="https://github.com/user-attachments/assets/67802d38-8440-4a3a-8f18-a08687597c67" />
 3. 로그인 후 메인 페이지
 <img width="1920" height="1080" alt="로그인후페이지" src="https://github.com/user-attachments/assets/f28e7670-fa54-4f50-8bf9-250c64399e9d" />
-
+4. 회원 가입 페이지
+<img width="1395" height="785" alt="image" src="https://github.com/user-attachments/assets/4bb5605d-3dc7-460a-b2fc-918f16f1c2ee" />
+5. 
  
 
 
