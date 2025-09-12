@@ -1,4 +1,12 @@
-# NFLibrary 도서관 웹 어플리케이션 구현 
+# 📚 NFLibrary
+
+**NFLibrary**는 JSP/Servlet 기반의 도서관 웹 애플리케이션입니다.  
+도서 검색과 대출/반납, 희망도서 신청, 공지사항, 회원 관리 기능을 제공하며,  
+DAO–Service–Controller의 MVC 아키텍처로 구현되었습니다.
+
+---
+
+
 # 팀명
 - 404 NOT FOUND
 # 신선호 - 안태현 - 김승재
