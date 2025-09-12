@@ -39,7 +39,6 @@ public class NoticeService {
 			e.printStackTrace();
 		}
 		return result;
-		
 	}
 
 	public Notice selectOneByNo(int i) {

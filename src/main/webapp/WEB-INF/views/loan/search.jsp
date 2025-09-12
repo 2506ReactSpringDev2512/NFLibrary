@@ -38,50 +38,29 @@
 		</c:if>
 			<h1 class="loan-title">서적 검색</h1>
             <div class="search-wrap">
-                <input type="text" class="loan-search" placeholder="검색어를 입력하세요" />
+                <input type="text" class="loan-search" placeholder="검색어를 입력하세요"  value="${searchBook }"/>
             </div>
 
             <div class="loan-divider"></div>
 
-            <p class="loan-note">○○에 대한 검색 결과입니다</p>
+            <p class="loan-note">${searchBook }에 대한 검색 결과입니다</p>
 
             <section class="loan-grid">
                 <!-- 1 -->
+                <c:forEach items="${bList }" var="book">
                 <article class="loan-item">
-                    <img src="/resources/image/fox.jpg" alt="도서표지" class="book-img" />
+                    <img src="${book.bookImg }" alt="도서표지" class="book-img" />
                     <div class="info">
-                        <div class="book-name">책을먹는여우</div>
+                        <div class="book-name">${book.bookName }</div>
                         <button class="apply-btn">신청하기</button>
                     </div>
                 </article>
+                </c:forEach>
 
-                <!-- 2 -->
-                <article class="loan-item">
-                    <img src="/resources/image/math.jpg" alt="도서표지" class="book-img" />
-                    <div class="info">
-                        <div class="book-name">수학의정석미적분I</div>
-                        <button class="apply-btn">신청하기</button>
-                    </div>
-                </article>
-
-                <!-- 3 -->
-                <article class="loan-item">
-                    <img src="/resources/image/Bang.jpg" alt="도서표지" class="book-img" />
-                    <div class="info">
-                        <div class="book-name">뺑덕</div>
-                        <button class="apply-btn">신청하기</button>
-                    </div>
-                </article>
-
-                <!-- 4 -->
-                <article class="loan-item">
-                    <img src="/resources/image/tree.jpg" alt="도서표지" class="book-img" />
-                    <div class="info">
-                        <div class="book-name">아낌없이주는나무</div>
-                        <button class="apply-btn">신청하기</button>
-                    </div>
-                </article>
             </section>
+            <c:if test="${empty bList }">
+            <p>검색 결과가 없습니다</p>
+            </c:if>
         </div>
     </main>
 </div>
