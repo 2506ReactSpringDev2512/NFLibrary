@@ -34,11 +34,11 @@
   <div class="layout">
     <!-- 좌측 배너 -->
     <div class="left-banner">
-      <h3>마이페이지</h3>
-      <a href="<c:url value='/mypage/edit'/>">내 정보 수정</a><hr />
-      <a href="<c:url value='/loan/list'/>">대출 조회</a><hr />
-      <a href="<c:url value='/book/wish/list'/>">희망 도서 신청 조회</a><hr />
-      <a href="<c:url value='/member/withdraw'/>">회원 탈퇴</a><hr />
+        <h3>마이페이지</h3>
+		<a href="/member/edit">내 정보 수정</a><hr />
+      	<a href="/member/loan">대출 조회</a><hr />
+      	<a href="/member/wishbook">희망 도서 신청 조회</a><hr />
+      	<a href="/member/exfire">회원 탈퇴</a><hr />
     </div>
 
     <!-- 본문 -->

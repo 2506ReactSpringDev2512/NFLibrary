@@ -33,9 +33,13 @@ public class NoticeDeleteServlet extends HttpServlet {
 		int noticeNo = Integer.parseInt(request.getParameter("noticeNo"));
 		int result = nService.deleteNotice(noticeNo);
 		if(result > 0) {
-			request.getRequestDispatcher("/WEB-INF/views/notice/noticeList.jsp")
-			.forward(request, response);
+			response.sendRedirect(request.getContextPath() + "/notice/list");
 		}
+		else {
+	        request.setAttribute("errorMsg", "삭제 실패");
+	        request.getRequestDispatcher("/WEB-INF/views/common/error.jsp")
+	        .forward(request, response);
+	    }
 	}
 
 	/**

@@ -77,11 +77,17 @@ main .content h1 {
     color: white;
 }
 
+form{
+	width: 100%;
+	display: flex;
+	justify-content: center;
+}
+
 .search-bar {
     margin-top: 20px;
     padding: 15px;
-    width: 80%;
-    max-width: 600px;
+    width: 600px;
+    max-width: 80%; 
     border: none;
     border-radius: 10px;
     font-size: 18px;

@@ -27,8 +27,14 @@
 }
 
 .mainTitle {
-  margin-top: 100px;
+  margin-top: 50px;
 }
+
+.container hr {
+  border: 1px solid black;
+  width: 100%;
+}
+
 h1 {
   text-align: left;
 }
@@ -86,6 +92,7 @@ table {
 
   border-left: none;
   border-right: none;
+  margin-bottom: 30px;
 }
 
 th {

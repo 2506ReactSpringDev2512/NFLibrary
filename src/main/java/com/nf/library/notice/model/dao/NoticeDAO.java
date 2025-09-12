@@ -29,7 +29,7 @@ public class NoticeDAO {
 		Statement stmt = null;
 		PreparedStatement pstmt = null;
 		ResultSet rset = null;
-		String query = "SELECT * FROM NOTICE_TBL";
+		String query = "SELECT * FROM NOTICE_TBL ORDER BY NOTICE_NO DESC";
 		pstmt = conn.prepareStatement(query);
 		rset = pstmt.executeQuery();
 		List<Notice> noticeList = new ArrayList<Notice>();
@@ -77,7 +77,7 @@ public class NoticeDAO {
 	public List<Notice> searchKeyword(String keyword, Connection conn) throws SQLException {
 		PreparedStatement pstmt = null;
 		ResultSet rset = null;
-		String query = "SELECT * FROM NOTICE_TBL WHERE NOTICE_SUBJECT LIKE '%'||?||'%'";
+		String query = "SELECT * FROM NOTICE_TBL WHERE NOTICE_SUBJECT LIKE '%'||?||'%' ORDER BY NOTICE_NO ASC";
 		pstmt = conn.prepareStatement(query);
 		pstmt.setString(1, keyword);
 		rset = pstmt.executeQuery();
@@ -102,10 +102,10 @@ public class NoticeDAO {
 		Notice nOne = null;
 		String query = "INSERT INTO NOTICE_TBL "
 				+ "(NOTICE_NO, NOTICE_SUBJECT, NOTICE_CONTENT, NOTICE_WRITER) "
-				+ "VALUES (NOTICE_SEQ.NEXTVAL, ?, ?, '홍길동')";
+				+ "VALUES (NOTICE_SEQ.NEXTVAL, ?, ?, 'admin')";
 		pstmt  = conn.prepareStatement(query);
-		pstmt.setString(2, notice.getNoticeSubject());
-		pstmt.setString(3, notice.getNoticeContent());
+		pstmt.setString(1, notice.getNoticeSubject());
+		pstmt.setString(2, notice.getNoticeContent());
 		int result = pstmt.executeUpdate();
 		conn.close();
 		pstmt.close();
@@ -116,9 +116,9 @@ public class NoticeDAO {
 		int result = 0;
 		PreparedStatement pstmt = null;
 		String query = "DELETE FROM NOTICE_TBL WHERE NOTICE_NO = ?";
-		pstmt = conn.prepareStatement(query);
-		result = pstmt.executeUpdate();
+		pstmt = conn.prepareStatement(query); // 실행준비
 		pstmt.setInt(1, noticeNo);
+		result = pstmt.executeUpdate();
 		pstmt.close();
 		conn.close();
 		return result;

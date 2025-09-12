@@ -178,5 +178,49 @@ public class LendService {
 		return list;
 	}
 	
+	// 상태 변경
+	public int updateWishbookStatus(int wishbookNo, String newStatus) {
+	    Connection conn = null;
+	    int result = 0;
+	    try {
+	        conn = jdbcTemplate.getConnection();
+	        conn.setAutoCommit(false);
+	        result = lendDao.updateWishbookStatus(conn, wishbookNo, newStatus);
+	        if (result > 0) {
+	            jdbcTemplate.commit(conn);
+	        } else {
+	            jdbcTemplate.rollback(conn);
+	        }
+	    } catch (SQLException e) {
+	        e.printStackTrace();
+	        jdbcTemplate.rollback(conn);
+	    } finally {
+	        jdbcTemplate.close(conn);
+	    }
+	    return result;
+	}
+
+	// 삭제
+	public int deleteWishbook(int wishbookNo) {
+	    Connection conn = null;
+	    int result = 0;
+	    try {
+	        conn = jdbcTemplate.getConnection();
+	        conn.setAutoCommit(false);
+	        result = lendDao.deleteWishbook(conn, wishbookNo);
+	        if (result > 0) {
+	            jdbcTemplate.commit(conn);
+	        } else {
+	            jdbcTemplate.rollback(conn);
+	        }
+	    } catch (SQLException e) {
+	        e.printStackTrace();
+	        jdbcTemplate.rollback(conn);
+	    } finally {
+	        jdbcTemplate.close(conn);
+	    }
+	    return result;
+	}
+	
 
 }

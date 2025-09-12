@@ -85,7 +85,7 @@ h1 {
 
 table {
   margin: 0 auto;
-  display: flex;
+  display: table;
   border-collapse: collapse;
   width: auto;
   justify-content: center;

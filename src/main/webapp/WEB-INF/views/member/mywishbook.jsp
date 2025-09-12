@@ -14,10 +14,6 @@
     String memberId = (String) session.getAttribute("memberId");
 	%>
 	
-	<%
-    String adminYn = (String) session.getAttribute("adminYn");
-	%>
-	
 	<!DOCTYPE html>
 	<html lang="en">
 	<head>
@@ -38,26 +34,6 @@
         } else {
             window.location.href = '/addwishbook';
         }
-        
-        function changeStatus(wishbookNo, currentStatus) {
-            // 상태 변경을 위한 페이지 이동 또는 Ajax 요청 가능
-            // 예: 상태 변경 페이지로 이동 (혹은 팝업)
-            let nextStatus;
-            if(currentStatus === '확인 중') nextStatus = '입고 완료';
-            else if(currentStatus === '입고 완료') nextStatus = '입고 불가';
-            else if(currentStatus === '입고 불가') nextStatus = '확인 중';
-            else nextStatus = '확인 중';
-
-            if(confirm(`상태를 '${currentStatus}'에서 '${nextStatus}'(으)로 변경하시겠습니까?`)) {
-                window.location.href = `/wishbook/changeStatus?wishbookNo=${wishbookNo}&status=${nextStatus}`;
-            }
-        }
-
-        function deleteWishbook(wishbookNo) {
-            if(confirm('정말로 삭제하시겠습니까?')) {
-                window.location.href = `/wishbook/delete?wishbookNo=${wishbookNo}`;
-            }
-        }
     }
 	</script>
 	<body>
@@ -66,8 +42,15 @@
 	    <!-- 메인 -->
 	    <div class="layout">
 	        <!-- 좌측 배너 -->
+	        <div class="left-banner">
+	            <h3>마이페이지</h3>
+<a href="/member/edit">내 정보 수정</a><hr />
+      <a href="/member/loan">대출 조회</a><hr />
+      <a href="/member/wishbook">희망 도서 신청 조회</a><hr />
+      <a href="/member/exfire">회원 탈퇴</a><hr />
+	        </div>
 	        <main class="content">
-	            <h1>희망 도서 신청</h1>
+	            <h1>내 도서 신청 관리</h1>
 	            <hr>
 	            <div class="list-container"> 
 	                <c:if test="${empty wList}">
@@ -81,13 +64,10 @@
 	                    <th class="list-bookauthor">저자</th>
 	                    <th class="list-bookpublisher">출판사</th>
 	                    <th class="list-status">상태</th>
-	                    <c:if test="${sessionScope.adminYn eq 'Y'}">
-    					<th>관리</th>
-						</c:if>
 	                </tr>
 	            </thead>
 	            <tbody>
-	            	<c:forEach items="${WList}" var="book" varStatus="status">
+	            	<c:forEach items="${wList}" var="book" varStatus="status">
     				<tr>
         				<td>${(currentPage - 1) * 10 + status.index + 1}</td> <!-- 전체 번호 계산 -->
         				<td>${book.wishbook_name}</td>
@@ -104,50 +84,10 @@
                 			<td class="check">${book.wishbook_status}</td>
             			</c:when>
         				</c:choose>
-        				
-        				  <c:if test="${sessionScope.adminYn eq 'Y'}">
-        <td>
-            <form method="post" action="${pageContext.request.contextPath}/wishbook/updateStatus">
-                <input type="hidden" name="wishbookNo" value="${book.wishbook_no}" />
-                <select name="status">
-                    <option value="확인 중" ${book.wishbook_status == '확인 중' ? 'selected' : ''}>확인 중</option>
-                    <option value="입고 완료" ${book.wishbook_status == '입고 완료' ? 'selected' : ''}>입고 완료</option>
-                    <option value="입고 불가" ${book.wishbook_status == '입고 불가' ? 'selected' : ''}>입고 불가</option>
-                </select>
-                <button type="submit">변경</button>
-            </form>
-            <form method="post" action="${pageContext.request.contextPath}/wishbook/delete">
-                <input type="hidden" name="wishbookNo" value="${book.wishbook_no}" />
-                <button type="submit">삭제</button>
-            </form>
-        </td>
-    </c:if>
     				</tr>
 					</c:forEach>
 	            </tbody>
 	            </table>
-	        </div>
-	        <div class="button-write-container">
-	        <div class="button-container">
-	    	<c:if test="${empty currentPage}">
-	        	<c:set var="currentPage" value="1"/>
-	    	</c:if>
-	
-	    	<c:if test="${totalPages < 1}">
-	        	<c:set var="totalPage" value="1"/>
-	    	</c:if>
-	
-	    	<c:forEach begin="1" end="${totalPages}" var="i">
-	        <button		class="${i == currentPage ? 'checked' : 'unchecked'}"
-	            		onclick="location.href='${pageContext.request.contextPath}/wishbook?page=${i}'">
-	            ${i}
-	        </button>
-	    	</c:forEach>
-			</div>
-	
-	        <div class="write-container">
-	            <button class="write" onClick="goToAddWishbook()">글쓰기</button>
-	        </div>
 	        </div>
 	        </main>
 	    </div>
